@@ -1,0 +1,33 @@
+import React from 'react';
+import Poster from '../components/Poster';
+import users from '../static_data/users_data';
+
+function Posters(props) {
+  const posterIds = props.postersData.map(poster => {
+    return poster.user_id
+  })
+
+  const posterDetails = posterIds.map(poster_id => {
+    return users.users.find(user => user.id === poster_id)
+  })
+
+  const posters = posterDetails.map(poster => {
+    return (
+      <Poster
+        key={poster.id}
+        username={poster.username}
+        avatar_url={poster.avatar_template}
+      />
+    )
+  })
+
+  return (
+    <ul>
+      { posters }
+    </ul>
+  )
+}
+
+export default Posters;
+
+//https://www.freecodecamp.org/forum/user_avatar/www.freecodecamp.org/ieahleen/25/120082_2.png
