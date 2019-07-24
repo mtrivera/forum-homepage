@@ -1,18 +1,21 @@
 import React from 'react';
 
-function setSize(str, newSize) {
-  return str.replace('{size}', newSize);
-}
-
-function removeEscape(str) {
-  return str.replace('\\', '');
-}
+const HOME_URL = 'https://freecodecamp.org';
+const AVATAR_SIZE = 25;
 
 function Poster(props) {
+  const formattedURL = props.avatar_url
+    .replace('\\', '')
+    .replace('{size}', AVATAR_SIZE);
+
+  const avatarUrl = HOME_URL.concat(formattedURL);
+
   return (
     <>
-      <h2>{props.username}</h2>
-      <h3>{props.avatar_url}</h3>
+      <img className="circle"
+        src={avatarUrl} 
+        alt={props.username} 
+      />
     </>
   )
 }
