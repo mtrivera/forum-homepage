@@ -29,5 +29,3 @@ function Posters(props) {
 }
 
 export default Posters;
-
-//https://www.freecodecamp.org/forum/user_avatar/www.freecodecamp.org/ieahleen/25/120082_2.png
