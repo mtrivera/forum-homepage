@@ -22,7 +22,7 @@ function Posters(props) {
   })
 
   return (
-    <ul>
+    <ul className="ul--list">
       { posters }
     </ul>
   )

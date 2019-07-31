@@ -2,7 +2,9 @@ import React from 'react';
 
 function Footer() {
   return (
-    <p>Copyright &copy; 2019. Miguel T Rivera.</p>
+    <p className="txt-center">
+      Copyright &copy; 2019. Miguel T Rivera.
+    </p>
   )
 }
 

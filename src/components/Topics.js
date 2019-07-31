@@ -14,7 +14,7 @@ function Topics(props) {
   })  
 
   return (
-    <ul>
+    <ul className="ul--list">
       { topicsList }
     </ul>
   )

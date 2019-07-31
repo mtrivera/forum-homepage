@@ -6,9 +6,11 @@ import Topics from './components/Topics';
 function App() {
   return (
     <>
-      <Header />
-      <Topics />
-      <Footer />
+      <main className="container">
+        <Header />
+        <Topics />
+        <Footer />
+      </main>
     </>
   );
 }
