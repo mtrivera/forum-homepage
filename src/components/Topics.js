@@ -5,13 +5,9 @@ import topicData from '../static_data/topics_data';
 function Topics(props) {
   const topicsList = topicData.topics.map(topic => {
     return (
-      <li>
-        <Topic key={props.id} 
-          data={{topic}}
-        />
-      </li>
+      <Topic key={topic.id} data={{topic}} />
     )
-  })  
+  })
 
   return (
     <ul className="ul--list">
