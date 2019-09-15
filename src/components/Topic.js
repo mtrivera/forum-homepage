@@ -21,6 +21,7 @@ function Topic(props) {
         {
           <Posters
             postersData={posters}
+            users={props.users}
           />
         }
       </span>
