@@ -1,6 +1,5 @@
 import React from 'react';
 import Poster from '../components/Poster';
-import users from '../static_data/users_data';
 
 function Posters(props) {
   const posterIds = props.postersData.map(poster => {
@@ -8,7 +7,7 @@ function Posters(props) {
   })
 
   const posterDetails = posterIds.map(poster_id => {
-    return users.users.find(user => user.id === poster_id)
+    return props.users.find(user => user.id === poster_id)
   })
 
   const posters = posterDetails.map(poster => {
