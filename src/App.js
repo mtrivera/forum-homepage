@@ -15,7 +15,7 @@ class App extends React.Component {
     this.getAPIData();
   }
 
-  getAPIData = async () => {
+  getAPIData = async() => {
     let res = await axios.get('https://buttercup-island.glitch.me/latest');
     let { users } = res.data;
     let { topics } = res.data.topic_list;
@@ -31,7 +31,14 @@ class App extends React.Component {
       <>
         <main className="container">
           <Header />
-          <Topics />
+          {
+            !this.state.isLoaded &&
+            <h2>Loading latest posts from server...</h2>
+          }
+          <Topics
+            topics={this.state.topics}
+            users={this.state.users}
+          />
           <Footer />
         </main>
       </>
