@@ -6,6 +6,7 @@ import Topics from './components/Topics';
 
 class App extends React.Component {
   state = {
+    error: null,
     users: [],
     topics: [],
     isLoaded: false
@@ -16,14 +17,21 @@ class App extends React.Component {
   }
 
   getAPIData = async() => {
-    let res = await axios.get('https://buttercup-island.glitch.me/latest');
-    let { users } = res.data;
-    let { topics } = res.data.topic_list;
-    this.setState({
-      users,
-      topics,
-      isLoaded: true
-    });
+    try {
+      let res = await axios.get('https://buttercup-island.glitch.me/latest');
+      let { users } = res.data;
+      let { topics } = res.data.topic_list;
+      this.setState({
+        users,
+        topics,
+        isLoaded: true
+      });
+    } catch(error) {
+      this.setState({
+        error,
+        isLoaded: true
+      });
+    }
   }
 
   render() {
@@ -34,6 +42,10 @@ class App extends React.Component {
           {
             !this.state.isLoaded &&
             <h2>Loading latest posts from server...</h2>
+          }
+          {
+            this.state.error &&
+            <h2>{this.state.error}</h2>
           }
           <Topics
             topics={this.state.topics}
