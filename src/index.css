@@ -26,11 +26,11 @@ span {
 }
 
 .span--image-list {
-  width: 200px;
+  width: 180px;
 }
 
 .span--number {
-  width: 50px;
+  width: 70px;
 }
 
 .span--date-lastpost {
@@ -39,7 +39,13 @@ span {
 
 .ul--list {
   padding: 0;
+  margin-top: 20px;
   list-style-type: none;
+}
+
+ul li {
+  border-top: 1px solid #ccc;
+  margin-bottom: 15px;
 }
 
 .txt-center {
@@ -48,4 +54,14 @@ span {
 
 .img--image-circle {
   border-radius: 50%;
+}
+
+.span--text-title a {
+  color: black;
+  text-decoration: none;
+}
+
+.span--text-title a:hover {
+  color: purple;
+  text-decoration: underline;
 }
