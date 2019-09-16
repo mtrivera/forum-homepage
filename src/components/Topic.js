@@ -6,10 +6,15 @@ import Posters from '../components/Posters';
 dayjs.extend(relativeTime);
 
 function Topic(props) {
-  const { id, title, posters, reply_count,
-    views, last_posted_at } =
-    props.data.topic;
-    
+  const {
+    id,
+    title,
+    posters,
+    reply_count,
+    views,
+    last_posted_at
+  } = props.data.topic;
+  
   return (
     <li>
       <span className="span--text-title">
