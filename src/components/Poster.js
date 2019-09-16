@@ -13,8 +13,9 @@ function Poster(props) {
   return (
     <>
       <img className="img--image-circle"
-        src={avatarUrl} 
-        alt={props.username} 
+        src={avatarUrl}
+        title={props.username}
+        alt=''
       />
     </>
   )
